@@ -482,6 +482,10 @@ a:hover {
 
 /* === RESPONSIVE === */
 @media (max-width: 768px) {
+  .site-header {
+    position: static;
+  }
+
   body {
     font-size: 16px;
   }
