@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Руководство кампании — Кодекс</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .pdf-viewer {
+      padding-top: 24px;
+      padding-bottom: 80px;
+    }
+
+    .pdf-page-wrapper {
+      margin: 0 auto 48px;
+      max-width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .pdf-page-wrapper canvas {
+      max-width: 100%;
+      height: auto !important;
+      display: block;
+    }
+
+    .pdf-loading {
+      text-align: center;
+      padding: 96px 0;
+      color: var(--text-muted);
+      font-style: italic;
+      font-size: 1.1rem;
+    }
+
+    .pdf-loading .spinner {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      border: 2px solid var(--border);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin-bottom: 16px;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .pdf-error {
+      text-align: center;
+      padding: 96px 0;
+      color: var(--accent);
+      font-size: 1.1rem;
+    }
+
+    .pdf-page-number {
+      text-align: center;
+      color: var(--text-muted);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      margin-top: -40px;
+      margin-bottom: 48px;
+    }
+
+    /* === TABLE OF CONTENTS === */
+    .toc {
+      max-width: 640px;
+      margin: 0 auto 20px;
+      padding: 0 8px;
+    }
+
+    .toc-section {
+      margin-bottom: 28px;
+    }
+
+    .toc-section h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      color: var(--heading);
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .toc-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .toc-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 4px 0;
+    }
+
+    .toc-list a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    .toc-list a:hover {
+      color: var(--accent-hover);
+    }
+
+    .toc-list .toc-dots {
+      flex: 1;
+      border-bottom: 1px dotted var(--border);
+      margin: 0 10px;
+      position: relative;
+      top: -3px;
+    }
+
+    .toc-list .toc-page {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      font-family: 'Cormorant Garamond', serif;
+      white-space: nowrap;
+    }
+
+    /* === SCROLL TO TOP === */
+    .scroll-top-btn {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      width: 44px;
+      height: 44px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--accent);
+      font-size: 1.3rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s, background 0.25s, border-color 0.25s;
+      z-index: 50;
+      line-height: 1;
+    }
+
+    .scroll-top-btn.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .scroll-top-btn:hover {
+      background: var(--surface-hover);
+      border-color: var(--border-light);
+      color: var(--accent-hover);
+    }
+
+    @media (max-width: 480px) {
+      .scroll-top-btn {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="site-title">&#x2726; Кодекс</a>
+      <nav class="site-nav">
+        <a href="index.html">Статьи</a>
+        <a href="recaps.html">Хроники</a>
+        <a href="rulebook.html" class="active">Руководство</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero" style="padding-bottom: 16px;">
+      <h1 style="font-size: 3rem;">Руководство кампании</h1>
+      <p class="subtitle">D&amp;Dragon Age</p>
+    </section>
+
+    <div class="ornament">&#x2E31; &#x2726; &#x2E31;</div>
+
+    <div style="text-align: center; margin-bottom: 32px;">
+      <a href="%D1%81%D1%82%D0%B0%D1%82%D1%8C%D0%B8%20%D0%BA%D0%BE%D0%B4%D0%B5%D0%BA%D1%81%D0%B0/D%26Dragon%20age.%20%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE%20%D0%BA%D0%B0%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D0%B8.pdf" download style="display: inline-flex; align-items: center; gap: 8px; color: var(--accent); font-family: 'Cormorant Garamond', serif; font-size: 1rem; letter-spacing: 0.06em; padding: 10px 24px; border: 1px solid var(--border); transition: all 0.25s;">&#x2913; Скачать PDF</a>
+    </div>
+
+    <!-- Table of Contents -->
+    <nav class="toc" id="toc">
+      <div class="toc-section">
+        <h3>Раздел I: Основы мироздания</h3>
+        <ul class="toc-list">
+          <li><a href="#page-4">География</a><span class="toc-dots"></span><span class="toc-page">4</span></li>
+          <li><a href="#page-5">Реальность и Тень</a><span class="toc-dots"></span><span class="toc-page">5</span></li>
+          <li><a href="#page-5">Магия и её опасности</a><span class="toc-dots"></span><span class="toc-page">5</span></li>
+          <li><a href="#page-6">Мор и Скверна</a><span class="toc-dots"></span><span class="toc-page">6</span></li>
+          <li><a href="#page-6">Серые стражи</a><span class="toc-dots"></span><span class="toc-page">6</span></li>
+          <li><a href="#page-7">Четыре расы Тедаса</a><span class="toc-dots"></span><span class="toc-page">7</span></li>
+          <li><a href="#page-8">Верования Тедаса</a><span class="toc-dots"></span><span class="toc-page">8</span></li>
+        </ul>
+      </div>
+      <div class="toc-section">
+        <h3>Раздел II: Подготовка к новой кампании</h3>
+        <ul class="toc-list">
+          <li><a href="#page-9">События прошлого</a><span class="toc-dots"></span><span class="toc-page">9</span></li>
+          <li><a href="#page-10">Новая кампания: Хроники Пятого Мора</a><span class="toc-dots"></span><span class="toc-page">10</span></li>
+          <li><a href="#page-11">География Ферелдена</a><span class="toc-dots"></span><span class="toc-page">11</span></li>
+          <li><a href="#page-12">История Ферелдена</a><span class="toc-dots"></span><span class="toc-page">12</span></li>
+          <li><a href="#page-14">Жители Ферелдена</a><span class="toc-dots"></span><span class="toc-page">14</span></li>
+          <li><a href="#page-21">Быт и обычаи Ферелдена</a><span class="toc-dots"></span><span class="toc-page">21</span></li>
+        </ul>
+      </div>
+      <div class="toc-section">
+        <h3>Раздел III: Создание персонажа</h3>
+        <ul class="toc-list">
+          <li><a href="#page-28">Где начинается наша история?</a><span class="toc-dots"></span><span class="toc-page">28</span></li>
+          <li><a href="#page-29">Ограничения и правила</a><span class="toc-dots"></span><span class="toc-page">29</span></li>
+          <li><a href="#page-30">Перед выбором класса и расы</a><span class="toc-dots"></span><span class="toc-page">30</span></li>
+          <li><a href="#page-31">Пошаговое создание персонажа на примере</a><span class="toc-dots"></span><span class="toc-page">31</span></li>
+          <li><a href="#page-32">Выбор класса и его интерпретация</a><span class="toc-dots"></span><span class="toc-page">32</span></li>
+          <li><a href="#page-33">Выбор расы и происхождения</a><span class="toc-dots"></span><span class="toc-page">33</span></li>
+        </ul>
+      </div>
+      <div class="toc-section">
+        <h3>Раздел IV: Разное</h3>
+        <ul class="toc-list">
+          <li><a href="#page-44">Разное</a><span class="toc-dots"></span><span class="toc-page">44</span></li>
+          <li><a href="#page-46">Новые правила и системы</a><span class="toc-dots"></span><span class="toc-page">46</span></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="ornament">&#x2E31; &#x2726; &#x2E31;</div>
+
+    <div id="pdf-container" class="pdf-viewer">
+      <div class="pdf-loading" id="pdf-loading">
+        <div class="spinner"></div>
+        <div>Загрузка руководства…</div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Scroll to top button -->
+  <button class="scroll-top-btn" id="scroll-top-btn" title="К оглавлению">&#x2191;</button>
+
+  <footer class="site-footer">
+    <div class="container">Записано в эпоху Дракона</div>
+  </footer>
+
+  <!-- PDF.js from CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.9.155/pdf.min.mjs" type="module"></script>
+  <script type="module">
+    import * as pdfjsLib from 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.9.155/pdf.min.mjs';
+
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.9.155/pdf.worker.min.mjs';
+
+    const PDF_URL = '%D1%81%D1%82%D0%B0%D1%82%D1%8C%D0%B8%20%D0%BA%D0%BE%D0%B4%D0%B5%D0%BA%D1%81%D0%B0/D%26Dragon%20age.%20%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE%20%D0%BA%D0%B0%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D0%B8.pdf';
+
+    const container = document.getElementById('pdf-container');
+    const loadingEl = document.getElementById('pdf-loading');
+
+    // Determine scale: fit page width to container
+    function getScale(page) {
+      const viewport = page.getViewport({ scale: 1 });
+      const containerWidth = container.clientWidth;
+      return containerWidth / viewport.width;
+    }
+
+    async function renderAllPages() {
+      try {
+        const pdf = await pdfjsLib.getDocument(PDF_URL).promise;
+        loadingEl.remove();
+
+        for (let i = 1; i <= pdf.numPages; i++) {
+          const page = await pdf.getPage(i);
+          const scale = getScale(page);
+          const viewport = page.getViewport({ scale });
+
+          const canvas = document.createElement('canvas');
+          canvas.width = viewport.width;
+          canvas.height = viewport.height;
+
+          // High-DPI rendering
+          const dpr = window.devicePixelRatio || 1;
+          canvas.width = Math.floor(viewport.width * dpr);
+          canvas.height = Math.floor(viewport.height * dpr);
+          canvas.style.width = viewport.width + 'px';
+          canvas.style.height = viewport.height + 'px';
+
+          const ctx = canvas.getContext('2d');
+          ctx.scale(dpr, dpr);
+
+          const wrapper = document.createElement('div');
+          wrapper.className = 'pdf-page-wrapper';
+          wrapper.id = 'page-' + i;
+          wrapper.appendChild(canvas);
+          container.appendChild(wrapper);
+
+          await page.render({ canvasContext: ctx, viewport }).promise;
+
+          // Page number
+          const numEl = document.createElement('div');
+          numEl.className = 'pdf-page-number';
+          numEl.textContent = i + ' / ' + pdf.numPages;
+          container.appendChild(numEl);
+        }
+      } catch (err) {
+        loadingEl.innerHTML = '';
+        const errorEl = document.createElement('div');
+        errorEl.className = 'pdf-error';
+        errorEl.textContent = 'Не удалось загрузить PDF: ' + err.message;
+        container.appendChild(errorEl);
+        console.error(err);
+      }
+    }
+
+    renderAllPages();
+
+    // Scroll-to-top button logic
+    const scrollBtn = document.getElementById('scroll-top-btn');
+    const toc = document.getElementById('toc');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 600) {
+        scrollBtn.classList.add('visible');
+      } else {
+        scrollBtn.classList.remove('visible');
+      }
+    });
+
+    scrollBtn.addEventListener('click', () => {
+      toc.scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
+
+</body>
+</html>
