@@ -8,6 +8,245 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* === CHRONICLE HERO === */
+    .chronicle-hero {
+      text-align: center;
+      padding: 96px 0 40px;
+      position: relative;
+    }
+
+    .chronicle-hero h1 {
+      font-size: 3.2rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 300;
+      margin-bottom: 12px;
+    }
+
+    .chronicle-hero .author {
+      color: var(--text-muted);
+      font-style: italic;
+      font-size: 1rem;
+      margin-bottom: 0;
+    }
+
+    /* === EPIGRAPH === */
+    .chronicle-epigraph {
+      text-align: center;
+      color: var(--text-muted);
+      font-style: italic;
+      font-size: 1.15rem;
+      margin: 32px auto 0;
+      max-width: 520px;
+      position: relative;
+      padding: 24px 0;
+    }
+
+    .chronicle-epigraph::before {
+      content: '\201C';
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 4rem;
+      color: var(--border-light);
+      font-family: 'Cormorant Garamond', serif;
+      line-height: 1;
+    }
+
+    /* === CHAPTER === */
+    .chapter {
+      margin-bottom: 80px;
+    }
+
+    .chapter-heading {
+      text-align: center;
+      margin-bottom: 56px;
+      position: relative;
+      padding: 32px 0;
+    }
+
+    .chapter-heading::before,
+    .chapter-heading::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+    }
+
+    .chapter-heading::before { top: 0; }
+    .chapter-heading::after { bottom: 0; }
+
+    .chapter-number {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .chapter-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.9rem;
+      font-weight: 600;
+      color: var(--heading);
+      letter-spacing: 0.06em;
+      border: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    /* === TIMELINE === */
+    .timeline {
+      position: relative;
+      max-width: 700px;
+      margin: 0 auto;
+      padding-left: 48px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 14px;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, var(--border) 40px, var(--border) calc(100% - 40px), transparent);
+    }
+
+    /* === SESSION ENTRY === */
+    .session {
+      position: relative;
+      margin-bottom: 56px;
+      opacity: 0;
+      transform: translateY(24px);
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    .session:nth-child(1) { animation-delay: 0.1s; }
+    .session:nth-child(2) { animation-delay: 0.3s; }
+    .session:nth-child(3) { animation-delay: 0.5s; }
+    .session:nth-child(4) { animation-delay: 0.7s; }
+
+    @keyframes fadeInUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Timeline node */
+    .session::before {
+      content: '';
+      position: absolute;
+      left: -41px;
+      top: 6px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 2px solid var(--accent);
+      z-index: 2;
+      box-shadow: 0 0 8px rgba(160, 140, 94, 0.25);
+    }
+
+    .session-date {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .session-body {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 28px 32px;
+      position: relative;
+      transition: border-color 0.3s;
+    }
+
+    .session-body:hover {
+      border-color: var(--border-light);
+    }
+
+    .session-body p {
+      margin-bottom: 1em;
+      text-align: justify;
+      hyphens: auto;
+    }
+
+    .session-body p:last-child { margin-bottom: 0; }
+
+    /* Drop cap on first paragraph */
+    .session-body > p:first-child {
+      text-indent: 0;
+    }
+
+    .session-body > p:first-child::first-letter {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.2em;
+      float: left;
+      line-height: 0.85;
+      padding-right: 8px;
+      padding-top: 4px;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    /* === CONTINUATION === */
+    .chronicle-end {
+      text-align: center;
+      padding: 48px 0 0;
+      position: relative;
+    }
+
+    .chronicle-end .end-ornament {
+      color: var(--border-light);
+      font-size: 1.2rem;
+      letter-spacing: 0.8em;
+      padding-left: 0.8em;
+      margin-bottom: 24px;
+    }
+
+    .chronicle-end .continuation {
+      color: var(--text-muted);
+      font-style: italic;
+      font-family: 'EB Garamond', serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.04em;
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 768px) {
+      .chronicle-hero h1 {
+        font-size: 2.2rem;
+        letter-spacing: 0.1em;
+      }
+
+      .timeline { padding-left: 36px; }
+      .timeline::before { left: 10px; }
+      .session::before { left: -32px; width: 7px; height: 7px; }
+      .session-body { padding: 20px; }
+
+      .chapter-heading::before,
+      .chapter-heading::after { width: 120px; }
+    }
+
+    @media (max-width: 480px) {
+      .chronicle-hero h1 { font-size: 1.7rem; }
+      .chapter-title { font-size: 1.45rem; }
+      .timeline { padding-left: 28px; }
+      .timeline::before { left: 6px; }
+      .session::before { left: -27px; width: 5px; height: 5px; }
+    }
+  </style>
 </head>
 <body>
 
@@ -24,44 +263,54 @@
 
   <main class="container">
 
-    <section class="hero" style="padding-bottom: 24px;">
-      <h1 style="font-size: 3rem;">Хроники Пятого Мора</h1>
-      <p class="subtitle" style="margin-bottom: 8px;">(автор: Варрик Тетрас)</p>
+    <section class="chronicle-hero">
+      <h1>Хроники Пятого Мора</h1>
+      <p class="author">автор: Варрик Тетрас</p>
     </section>
 
-    <div class="epigraph">
-      «Откуда я всё это знаю? У меня есть свои источники»
+    <div class="chronicle-epigraph">
+      Откуда я всё это знаю? У&nbsp;меня есть свои источники
     </div>
 
+    <div class="ornament">&#x2E31; &#x2726; &#x2E31;</div>
+
     <!-- Глава I -->
-    <section class="recap-chapter">
-      <h2>Глава I: Хоннлит</h2>
-
-      <div class="recap-session">
-        <div class="recap-date">11.01</div>
-        <div class="recap-content">
-          <p>Пути нескольких странников, не связанных ни общим прошлым, ни едиными целями, пересеклись на тракте, ведущем к королевскому лагерю в Остагаре. У каждого была своя причина спешить к армии, но дорожная усталость заставила их искать приют в небольшой деревне Хоннлит.</p>
-          <p>На подступах к поселению группу встретила странная пара: мальчик по имени Брен и загадочная старуха Аша. Поведение женщины было причудливым — в какой-то момент она едва не назвала себя именем из древних легенд, Флемет. Аша обратилась к чужакам с просьбой: найти мать мальчика, местную травницу, которая ушла в лес и до сих пор не вернулась. Дав обещание помочь, отряд вошел в деревню.</p>
-          <p>Однако в самом Хоннлите их ждали беды посерьезнее. В местной таверне героев встретил Том, сын трактирщика. Юноша явно что-то скрывал от соседей: со второго этажа доносились странные звуки. Оказалось, что хозяин заведения серьёзно болен, и Том, страшась пересудов, запер его в комнате. Без помощи пропавшей травницы Том не знал, что делать, и в отчаянии позволил странникам осмотреть отца.</p>
-          <p>Присмотревшись к состоянию хозяина, герои осознали страшную правду — тело и разум старика уже начала пожирать Скверна. События развивались стремительно и вскоре закончились трагедией. В начавшейся суматохе трактирщик погиб, а его сын Том был тяжело ранен и лишился глаза. Для селян Скверна оставалась лишь страшной сказкой, поэтому действия героев они сочли не спасением, а бессмысленной жестокостью. Разгневанная толпа окружила таверну, требуя расправы над «убийцами». Не желая проливать ещё больше крови, путники были вынуждены сдаться жителям деревни.</p>
-        </div>
+    <section class="chapter">
+      <div class="chapter-heading">
+        <span class="chapter-number">Глава первая</span>
+        <h2 class="chapter-title">Хоннлит</h2>
       </div>
 
-      <div class="ornament">&#xB7; &#xB7; &#xB7;</div>
+      <div class="timeline">
 
-      <div class="recap-session">
-        <div class="recap-date">25.01</div>
-        <div class="recap-content">
-          <p>Несколько часов путники провели под стражей в стенах местной Церкви. Селяне жаждали крови, а Преподобная мать настаивала на вызове храмовников, ведь в ситуации явно была замешана нечестивая магия. Ситуацию разрешило лишь появление Дункана — Командора Серых Стражей. Прибыв в Хоннлит с разведкой и разглядев в задержанных искру таланта, Дункан воспользовался древним Правом Призыва. Объявив их рекрутами Ордена, он уберёг их от суда церкви и толпы, фактически сохранив им жизнь.</p>
-          <p>Прежде чем вести отряд дальше, Командор поручил новобранцам разузнать судьбу семьи с ближайшего хутора. В тот день они должны были доставить провизию в общий деревенский амбар, но так и не появились. У старосты не осталось людей, которых он мог бы отправить на поиски, поэтому он надеялся на помощь Дункана, а тот, в свою очередь, решил использовать этот случай как первую проверку для своих будущих братьев по оружию. Кроме того, Дункан упомянул, что ещё один его рекрут, ушедший в лес на поиски травницы, так и не вернулся.</p>
-          <p>Покинув Хоннлит, герои по пути помогли укрепить деревенские ворота, чтобы те держались надёжнее прежнего. Направляясь к хутору, отряд решил сперва разыскать пропавшую травницу. Сын травницы и один из жителей у ворот упоминали конкретную опушку, где женщина обычно собирала коренья, и тропа к этому месту как раз сворачивала с основного пути вглубь лесной чащи.</p>
-          <p>Однако вместо мирных поисков путники столкнулись с серьёзной угрозой. Заражённые Скверной волки попытались застать отряд врасплох, но героям удалось вовремя заметить опасность и принять бой. В этой жестокой схватке путники одержали верх, сделав свой первый шаг на пути Серых Стражей.</p>
-        </div>
+        <article class="session">
+          <div class="session-date">Сессия 1 &mdash; 11 января</div>
+          <div class="session-body">
+            <p>Пути нескольких странников, не связанных ни общим прошлым, ни едиными целями, пересеклись на тракте, ведущем к королевскому лагерю в Остагаре. У каждого была своя причина спешить к армии, но дорожная усталость заставила их искать приют в небольшой деревне Хоннлит.</p>
+            <p>На подступах к поселению группу встретила странная пара: мальчик по имени Брен и загадочная старуха Аша. Поведение женщины было причудливым — в какой-то момент она едва не назвала себя именем из древних легенд, Флемет. Аша обратилась к чужакам с просьбой: найти мать мальчика, местную травницу, которая ушла в лес и до сих пор не вернулась. Дав обещание помочь, отряд вошел в деревню.</p>
+            <p>Однако в самом Хоннлите их ждали беды посерьезнее. В местной таверне героев встретил Том, сын трактирщика. Юноша явно что-то скрывал от соседей: со второго этажа доносились странные звуки. Оказалось, что хозяин заведения серьёзно болен, и Том, страшась пересудов, запер его в комнате. Без помощи пропавшей травницы Том не знал, что делать, и в отчаянии позволил странникам осмотреть отца.</p>
+            <p>Присмотревшись к состоянию хозяина, герои осознали страшную правду — тело и разум старика уже начала пожирать Скверна. События развивались стремительно и вскоре закончились трагедией. В начавшейся суматохе трактирщик погиб, а его сын Том был тяжело ранен и лишился глаза. Для селян Скверна оставалась лишь страшной сказкой, поэтому действия героев они сочли не спасением, а бессмысленной жестокостью. Разгневанная толпа окружила таверну, требуя расправы над «убийцами». Не желая проливать ещё больше крови, путники были вынуждены сдаться жителям деревни.</p>
+          </div>
+        </article>
+
+        <article class="session">
+          <div class="session-date">Сессия 2 &mdash; 25 января</div>
+          <div class="session-body">
+            <p>Несколько часов путники провели под стражей в стенах местной Церкви. Селяне жаждали крови, а Преподобная мать настаивала на вызове храмовников, ведь в ситуации явно была замешана нечестивая магия. Ситуацию разрешило лишь появление Дункана — Командора Серых Стражей. Прибыв в Хоннлит с разведкой и разглядев в задержанных искру таланта, Дункан воспользовался древним Правом Призыва. Объявив их рекрутами Ордена, он уберёг их от суда церкви и толпы, фактически сохранив им жизнь.</p>
+            <p>Прежде чем вести отряд дальше, Командор поручил новобранцам разузнать судьбу семьи с ближайшего хутора. В тот день они должны были доставить провизию в общий деревенский амбар, но так и не появились. У старосты не осталось людей, которых он мог бы отправить на поиски, поэтому он надеялся на помощь Дункана, а тот, в свою очередь, решил использовать этот случай как первую проверку для своих будущих братьев по оружию. Кроме того, Дункан упомянул, что ещё один его рекрут, ушедший в лес на поиски травницы, так и не вернулся.</p>
+            <p>Покинув Хоннлит, герои по пути помогли укрепить деревенские ворота, чтобы те держались надёжнее прежнего. Направляясь к хутору, отряд решил сперва разыскать пропавшую травницу. Сын травницы и один из жителей у ворот упоминали конкретную опушку, где женщина обычно собирала коренья, и тропа к этому месту как раз сворачивала с основного пути вглубь лесной чащи.</p>
+            <p>Однако вместо мирных поисков путники столкнулись с серьёзной угрозой. Заражённые Скверной волки попытались застать отряд врасплох, но героям удалось вовремя заметить опасность и принять бой. В этой жестокой схватке путники одержали верх, сделав свой первый шаг на пути Серых Стражей.</p>
+          </div>
+        </article>
+
       </div>
-
     </section>
 
-    <div class="ornament">&#x2E31; &#x2726; &#x2E31;</div>
+    <!-- Конец -->
+    <div class="chronicle-end">
+      <div class="end-ornament">&#x2E31; &#x2726; &#x2E31;</div>
+      <p class="continuation">Продолжение следует…</p>
+    </div>
 
   </main>
 
