@@ -1,0 +1,43 @@
+.page-rulebook .hero {
+  padding-bottom: 16px;
+}
+
+.page-rulebook .hero h1 {
+  font-size: 3rem;
+}
+
+.page-rulebook .actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: 0 auto 32px;
+}
+
+.page-rulebook .actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 210px;
+  color: var(--accent);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 10px 0;
+  border: 1px solid var(--border);
+  text-decoration: none;
+  transition: all 0.25s;
+}
+
+.page-rulebook .actions a:hover {
+  background: var(--surface-hover);
+  border-color: var(--border-light);
+  color: var(--accent-hover);
+}
+
+.page-rulebook .material-symbols-outlined.icon-book {
+  font-size: 1.1em;
+  vertical-align: -0.15em;
+}

@@ -9,40 +9,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=book_2" />
   <link rel="stylesheet" href="css/style.css">
-  <style>
-    .actions {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin: 0 auto 32px;
-    }
-
-    .actions a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      width: 210px;
-      color: var(--accent);
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      padding: 10px 0;
-      border: 1px solid var(--border);
-      text-decoration: none;
-      transition: all 0.25s;
-    }
-
-    .actions a:hover {
-      background: var(--surface-hover);
-      border-color: var(--border-light);
-      color: var(--accent-hover);
-    }
-  </style>
+  <link rel="stylesheet" href="css/pages/rulebook.css">
 </head>
-<body>
+<body class="page-rulebook">
 
   <header class="site-header">
     <div class="container header-inner">
@@ -56,15 +25,15 @@
   </header>
 
   <main class="container">
-    <section class="hero" style="padding-bottom: 16px;">
-      <h1 style="font-size: 3rem;">Руководство кампании</h1>
+    <section class="hero">
+      <h1>Руководство кампании</h1>
       <p class="subtitle">D&amp;Dragon Age</p>
     </section>
 
     <div class="ornament">&#x2E31; &#x2726; &#x2E31;</div>
 
     <div class="actions">
-      <a href="docs/rulebook.pdf" target="_blank"><span class="material-symbols-outlined" style="font-size: 1.1em; vertical-align: -0.15em;">book_2</span> Просмотреть</a>
+      <a href="docs/rulebook.pdf" target="_blank"><span class="material-symbols-outlined icon-book">book_2</span> Просмотреть</a>
       <a href="docs/rulebook.pdf" download>&#x2913; Скачать PDF</a>
     </div>
   </main>
