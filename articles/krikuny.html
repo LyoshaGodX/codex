@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Порождения тьмы: Крикуны — Кодекс</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="site-title">&#x2726; Кодекс</a>
+      <nav class="site-nav">
+        <a href="../index.html" class="active">Статьи</a>
+        <a href="../recaps.html">Хроники</a>
+        <a href="../rulebook.html">Руководство</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb">
+      <a href="../index.html">Кодекс</a><span class="sep">/</span>Существа<span class="sep">/</span>Крикуны
+    </div>
+
+    <article>
+      <div class="article-header">
+        <span class="article-category">Существа</span>
+        <h1>Порождения тьмы: Крикуны</h1>
+        <span class="badge-updated">Недавно добавлено</span>
+      </div>
+
+      <div class="article-image">
+        <img src="../images/krikuny.png" alt="Крикуны">
+      </div>
+
+      <div class="article-content">
+        <p>Учёные называют этих высоких тощих порождений тьмы шарлоками, но большинству людей они известны как крикуны из-за пронзительных криков, издаваемых во время битвы. Существует немало историй о солдатах, которых лишили мужества звуки, издаваемые скрытыми во тьме крикунами. Обычно заметить этих существ можно только в миг, когда они наносят удар.</p>
+        <p>Таящиеся в ночи крикуны заслужили зловещую славу благодаря невероятному проворству и гибкости, а также умению скрываться. Порождения тьмы используют их как ударную силу: они проникают в строй противника и пускают в дело длинные зазубренные клинки, закреплённые на предплечье. Такое оружие позволяет за считанные мгновения выпустить сопернику внутренности. Известно также, что крикуны могут пустить в дело яд, который они извлекают из собственной крови, а при нападении большими количествами прибегают к изощрённой коллективной тактике.</p>
+      </div>
+
+      <div class="article-attribution">
+        — Отрывок из Морового кодекса, систематизированного сборника исследований<br>
+        о порождениях тьмы, который находится под охраной<br>
+        в Императорской библиотеке Минратоса
+      </div>
+    </article>
+
+    <div class="article-nav">
+      <a href="genloki.html">&larr; Генлоки</a>
+      <a href="../index.html">Все статьи &rarr;</a>
+    </div>
+  </main>
+
+  <button class="scroll-top-btn" id="scroll-top-btn" title="Наверх">&#x2191;</button>
+
+  <footer class="site-footer">
+    <div class="container">Записано в эпоху Дракона</div>
+  </footer>
+
+  <script>
+    const btn = document.getElementById('scroll-top-btn');
+    window.addEventListener('scroll', () => btn.classList.toggle('visible', window.scrollY > 500));
+    btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  </script>
+
+</body>
+</html>

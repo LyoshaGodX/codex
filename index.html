@@ -34,44 +34,57 @@
       border-color: var(--border-light);
       color: var(--accent-hover);
     }
-    .scroll-top-btn {
-      position: fixed;
-      bottom: 32px;
-      right: 32px;
-      width: 44px;
-      height: 44px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      color: var(--accent);
-      font-size: 1.3rem;
+
+    .divider.collapsible {
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      user-select: none;
+      transition: color 0.25s;
+    }
+    .divider.collapsible:hover span:first-child {
+      color: var(--heading);
+    }
+    .toggle-icon {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      transform: rotate(90deg);
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .toggle-icon svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    .divider.collapsed .toggle-icon {
+      transform: rotate(0deg);
+    }
+    .divider.collapsible:hover .toggle-icon svg path {
+      fill: var(--accent);
+    }
+    .section-collapse {
+      overflow: visible;
+      transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .section-collapse.collapsed {
+      overflow: hidden;
+    }
+    .section-collapse.animating {
+      overflow: hidden;
+    }
+    .section-collapse .cards-grid {
+      transition: opacity 0.35s ease, transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .section-collapse.collapsed .cards-grid {
       opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s, visibility 0.3s, background 0.25s, border-color 0.25s;
-      z-index: 50;
-      line-height: 1;
-    }
-    .scroll-top-btn.visible {
-      opacity: 1;
-      visibility: visible;
-    }
-    .scroll-top-btn:hover {
-      background: var(--surface-hover);
-      border-color: var(--border-light);
-      color: var(--accent-hover);
+      transform: translateY(-12px);
     }
     @media (max-width: 480px) {
       .section-nav a { padding: 8px 16px; font-size: 0.88rem; }
-      .scroll-top-btn { bottom: 20px; right: 20px; width: 40px; height: 40px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="site-title">&#x2726; Кодекс</a>
@@ -85,7 +98,6 @@
 
   <main class="container">
 
-    <!-- Hero -->
     <section class="hero">
       <h1>Кодекс</h1>
       <p class="subtitle">Собрание знаний о землях Тедаса, записанных учёными, клириками и простыми обывателями</p>
@@ -99,11 +111,12 @@
       <a href="#creatures">Существа</a>
     </div>
 
-    <!-- Культура и история -->
-    <div class="divider" id="culture">
+    <div class="divider collapsible" id="culture" data-target="culture-grid">
       <span>Культура и история</span>
+      <span class="toggle-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#887b62"><path d="M383.67-239.67v-480.66L624-480 383.67-239.67Z"/></svg></span>
     </div>
 
+    <div class="section-collapse" id="culture-grid">
     <div class="cards-grid">
       <a href="articles/gorodskie-elfy.html" class="card">
         <h3>Городские эльфы</h3>
@@ -121,13 +134,21 @@
         <h3>Хасинды</h3>
         <p>«Дебряки» хасинды живут в Диких землях Коркари с тех пор, как первые войны с аламарри вытеснили их на юг. Во всех племенах широко известна история Флемет…</p>
       </a>
+      <a href="articles/mor.html" class="card card-updated">
+        <span class="update-dot"></span>
+        <span class="dot-tooltip">Недавно добавлено</span>
+        <h3>Мор</h3>
+        <p>Я бы сказал, что враг сменил стратегию, но в том-то и дело, что раньше у них не было никакой стратегии, кроме как сносить всё на своем пути…</p>
+      </a>
+    </div>
     </div>
 
-    <!-- Магия и религия -->
-    <div class="divider" id="magic">
+    <div class="divider collapsible" id="magic" data-target="magic-grid">
       <span>Магия и религия</span>
+      <span class="toggle-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#887b62"><path d="M383.67-239.67v-480.66L624-480 383.67-239.67Z"/></svg></span>
     </div>
 
+    <div class="section-collapse" id="magic-grid">
     <div class="cards-grid">
       <a href="articles/andraste.html" class="card">
         <h3>Андрасте: Невеста Создателя</h3>
@@ -157,18 +178,49 @@
         <h3>Церковная иерархия</h3>
         <p>Номинально главой Церкви является Верховная жрица. Рангом ниже стоит Владыка Церкви, управляющий множеством церквей и представляющий высшую религиозную власть…</p>
       </a>
+      <a href="articles/skverna.html" class="card card-updated">
+        <span class="update-dot"></span>
+        <span class="dot-tooltip">Недавно добавлено</span>
+        <h3>Скверна</h3>
+        <p>Скверна одолевает меня. Что не болит — то отмерло. В голове туман, но учёный во мне не может не описать признаки и ощущения…</p>
+      </a>
+    </div>
     </div>
 
-    <!-- Существа -->
-    <div class="divider" id="creatures">
+    <div class="divider collapsible" id="creatures" data-target="creatures-grid">
       <span>Существа</span>
+      <span class="toggle-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#887b62"><path d="M383.67-239.67v-480.66L624-480 383.67-239.67Z"/></svg></span>
     </div>
 
+    <div class="section-collapse" id="creatures-grid">
     <div class="cards-grid">
       <a href="articles/vurdolaki.html" class="card">
         <h3>Вурдалаки</h3>
         <p>Эти несчастные жертвы при контакте с кровью порождений тьмы не умерли мгновенно. Их охватили лихорадка и безумие. С их тела опали все волосы, а кожа покрылась струпьями…</p>
+      </a>      <a href="articles/porozhdeniya-tmy.html" class="card card-updated">
+        <span class="update-dot"></span>
+        <span class="dot-tooltip">Недавно добавлено</span>
+        <h3>Порождения тьмы</h3>
+        <p>Грех был той повитухой, что помогла появиться на свет порождениям тьмы. Магистры были свержены из Златого города, и их судьба легла бременем на весь наш мир…</p>
       </a>
+      <a href="articles/garloki.html" class="card card-updated">
+        <span class="update-dot"></span>
+        <span class="dot-tooltip">Недавно добавлено</span>
+        <h3>Порождения тьмы: Гарлоки</h3>
+        <p>Гарлоки выше ростом, чем их собратья генлоки, ― почти с человеком, но обладают мощным сложением и невероятной силой…</p>
+      </a>
+      <a href="articles/genloki.html" class="card card-updated">
+        <span class="update-dot"></span>
+        <span class="dot-tooltip">Недавно добавлено</span>
+        <h3>Порождения тьмы: Генлоки</h3>
+        <p>Удовольствие, которое Кассиус испытывает, расчленяя этих тварей, просто омерзительно. Сегодня на операционном столе был генлок…</p>
+      </a>
+      <a href="articles/krikuny.html" class="card card-updated">
+        <span class="update-dot"></span>
+        <span class="dot-tooltip">Недавно добавлено</span>
+        <h3>Порождения тьмы: Крикуны</h3>
+        <p>Учёные называют этих высоких тощих порождений тьмы шарлоками, но большинству людей они известны как крикуны…</p>
+      </a>    </div>
     </div>
 
     <div class="ornament">&#x2E31; &#x2726; &#x2E31;</div>
@@ -189,7 +241,43 @@
       btn.classList.toggle('visible', window.scrollY > 500);
     });
     btn.addEventListener('click', () => {
-      document.getElementById('sections-nav').scrollIntoView({ behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    document.querySelectorAll('.divider.collapsible').forEach(divider => {
+      const wrapper = document.getElementById(divider.dataset.target);
+      if (!wrapper) return;
+
+      // Set initial expanded height
+      wrapper.style.maxHeight = wrapper.scrollHeight + 'px';
+
+      divider.addEventListener('click', () => {
+        const isCollapsed = divider.classList.contains('collapsed');
+
+        if (isCollapsed) {
+          // Expand
+          divider.classList.remove('collapsed');
+          wrapper.classList.remove('collapsed');
+          wrapper.classList.add('animating');
+          wrapper.style.maxHeight = wrapper.scrollHeight + 'px';
+        } else {
+          // Collapse: fix current height first, then set to 0
+          wrapper.classList.add('animating');
+          wrapper.style.maxHeight = wrapper.scrollHeight + 'px';
+          requestAnimationFrame(() => {
+            divider.classList.add('collapsed');
+            wrapper.classList.add('collapsed');
+            wrapper.style.maxHeight = '0px';
+          });
+        }
+      });
+
+      wrapper.addEventListener('transitionend', () => {
+        wrapper.classList.remove('animating');
+        if (!divider.classList.contains('collapsed')) {
+          wrapper.style.maxHeight = 'none';
+        }
+      });
     });
   </script>
 

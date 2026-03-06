@@ -9,7 +9,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <style>
-    /* === CHRONICLE HERO === */
     .chronicle-hero {
       text-align: center;
       padding: 96px 0 40px;
@@ -31,7 +30,6 @@
       margin-bottom: 0;
     }
 
-    /* === EPIGRAPH === */
     .chronicle-epigraph {
       text-align: center;
       color: var(--text-muted);
@@ -55,7 +53,6 @@
       line-height: 1;
     }
 
-    /* === CHAPTER === */
     .chapter {
       margin-bottom: 80px;
     }
@@ -103,7 +100,6 @@
       margin: 0;
     }
 
-    /* === TIMELINE === */
     .timeline {
       position: relative;
       max-width: 700px;
@@ -121,25 +117,25 @@
       background: linear-gradient(to bottom, transparent, var(--border) 40px, var(--border) calc(100% - 40px), transparent);
     }
 
-    /* === SESSION ENTRY === */
     .session {
       position: relative;
       margin-bottom: 56px;
       opacity: 0;
       transform: translateY(24px);
       animation: fadeInUp 0.6s ease forwards;
+      scroll-margin-top: 80px;
     }
 
     .session:nth-child(1) { animation-delay: 0.1s; }
     .session:nth-child(2) { animation-delay: 0.3s; }
     .session:nth-child(3) { animation-delay: 0.5s; }
     .session:nth-child(4) { animation-delay: 0.7s; }
+    .session:nth-child(5) { animation-delay: 0.9s; }
 
     @keyframes fadeInUp {
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Timeline node */
     .session::before {
       content: '';
       position: absolute;
@@ -184,7 +180,6 @@
 
     .session-body p:last-child { margin-bottom: 0; }
 
-    /* Drop cap on first paragraph */
     .session-body > p:first-child {
       text-indent: 0;
     }
@@ -200,7 +195,6 @@
       font-weight: 700;
     }
 
-    /* === CONTINUATION === */
     .chronicle-end {
       text-align: center;
       padding: 48px 0 0;
@@ -223,7 +217,26 @@
       letter-spacing: 0.04em;
     }
 
-    /* === RESPONSIVE === */
+    .scroll-latest-btn {
+      display: block;
+      margin: 20px auto 0;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--accent);
+      font-size: 1.3rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      line-height: 1;
+    }
+    .scroll-latest-btn:hover {
+      border-color: var(--accent);
+      background: var(--surface-hover);
+      box-shadow: 0 0 12px rgba(160, 140, 94, 0.2);
+    }
+
     @media (max-width: 768px) {
       .chronicle-hero h1 {
         font-size: 2.2rem;
@@ -272,9 +285,10 @@
       Откуда я всё это знаю? У&nbsp;меня есть свои источники
     </div>
 
+    <button class="scroll-latest-btn" id="scroll-latest" title="К последней записи">&#x2193;</button>
+
     <div class="ornament">&#x2E31; &#x2726; &#x2E31;</div>
 
-    <!-- Глава I -->
     <section class="chapter">
       <div class="chapter-heading">
         <span class="chapter-number">Глава первая</span>
@@ -303,10 +317,20 @@
           </div>
         </article>
 
+        <article class="session" id="latest">
+          <div class="session-date">Сессия 3 &mdash; 28 февраля</div>
+          <div class="session-body">
+            <p>Разобравшись с поражёнными Скверной волками, группа не стала терять времени. Чтобы снизить риск заражения, путники выпили зелья, сдерживающие действие Скверны, а тела убитых волков и погибших предали огню. После этого отряд продолжил путь к хутору. Время в дороге позволило путникам немного выдохнуть — за разговорами напряжение начало спадать, и будущие соратники смогли лучше узнать друг друга.</p>
+            <p>Добравшись до хутора, герои встретили нового спутника, человека по имени Эван. Вскоре между Хидом и Дунканом вспыхнул конфликт: Хид попытался скрыть стрелу, заражённую Скверной, и это не укрылось от Командора. Ситуация быстро накалилась, но вмешательство Альхеля не позволило ссоре перерасти во что-то более серьёзное.</p>
+            <p>После этого отряд решил осмотреть хутор и выяснить, что здесь произошло. Их находки только усилили тревогу. Дункан обнаружил в мешке с мукой сгусток моровой массы, явный след порождений тьмы и Скверны. Фамильяр Элиаса тем временем нашёл рядом с хутором мёртвую лошадь. Стало ясно, что беда уже пришла на эти земли.</p>
+            <p>Худшие опасения подтвердились незамедлительно — из засады на отряд напали Порождения тьмы. Завязался тяжёлый и отчаянный бой. Группе пришлось приложить все свои силы, чтобы выстоять против порождений Скверны, а Альхель в пылу сражения получил болезненную травму.</p>
+            <p>Теперь измотанной, но прошедшей боевое крещение группе предстоит вернуться в Хоннлит. Им нужно перевести дух, залечить раны и осмыслить события этого долгого дня.</p>
+          </div>
+        </article>
+
       </div>
     </section>
 
-    <!-- Конец -->
     <div class="chronicle-end">
       <div class="end-ornament">&#x2E31; &#x2726; &#x2E31;</div>
       <p class="continuation">Продолжение следует…</p>
@@ -314,9 +338,25 @@
 
   </main>
 
+  <button class="scroll-top-btn" id="scroll-top-btn" title="Наверх">&#x2191;</button>
+
   <footer class="site-footer">
     <div class="container">Записано в эпоху Дракона</div>
   </footer>
+
+  <script>
+    document.getElementById('scroll-latest').addEventListener('click', () => {
+      document.getElementById('latest').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    const btn = document.getElementById('scroll-top-btn');
+    window.addEventListener('scroll', () => {
+      btn.classList.toggle('visible', window.scrollY > 500);
+    });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
 
 </body>
 </html>

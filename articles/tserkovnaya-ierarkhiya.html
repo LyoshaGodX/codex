@@ -49,13 +49,21 @@
 
     <div class="article-nav">
       <a href="usmiryonnye.html">&larr; Усмирённые</a>
-      <a href="vurdolaki.html">Вурдалаки &rarr;</a>
+      <a href="skverna.html">Скверна &rarr;</a>
     </div>
   </main>
+
+  <button class="scroll-top-btn" id="scroll-top-btn" title="Наверх">&#x2191;</button>
 
   <footer class="site-footer">
     <div class="container">Записано в эпоху Дракона</div>
   </footer>
+
+  <script>
+    const btn = document.getElementById('scroll-top-btn');
+    window.addEventListener('scroll', () => btn.classList.toggle('visible', window.scrollY > 500));
+    btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  </script>
 
 </body>
 </html>

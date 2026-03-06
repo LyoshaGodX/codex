@@ -34,7 +34,7 @@
       </div>
 
       <div class="article-image">
-        <img src="../%D1%81%D1%82%D0%B0%D1%82%D1%8C%D0%B8%20%D0%BA%D0%BE%D0%B4%D0%B5%D0%BA%D1%81%D0%B0/%D1%81%D1%83%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%B0/%D0%B2%D1%83%D1%80%D0%B4%D0%B0%D0%BB%D0%B0%D0%BA%D0%B8.webp" alt="Вурдалаки">
+        <img src="../images/vurdolaki.webp" alt="Вурдалаки">
       </div>
 
       <div class="article-content">
@@ -50,14 +50,22 @@
     </article>
 
     <div class="article-nav">
-      <a href="tserkovnaya-ierarkhiya.html">&larr; Церковная иерархия</a>
-      <a href="../index.html">Все статьи &rarr;</a>
+      <a href="skverna.html">&larr; Скверна</a>
+      <a href="porozhdeniya-tmy.html">Порождения тьмы &rarr;</a>
     </div>
   </main>
+
+  <button class="scroll-top-btn" id="scroll-top-btn" title="Наверх">&#x2191;</button>
 
   <footer class="site-footer">
     <div class="container">Записано в эпоху Дракона</div>
   </footer>
+
+  <script>
+    const btn = document.getElementById('scroll-top-btn');
+    window.addEventListener('scroll', () => btn.classList.toggle('visible', window.scrollY > 500));
+    btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  </script>
 
 </body>
 </html>

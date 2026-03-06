@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мор — Кодекс</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="site-title">&#x2726; Кодекс</a>
+      <nav class="site-nav">
+        <a href="../index.html" class="active">Статьи</a>
+        <a href="../recaps.html">Хроники</a>
+        <a href="../rulebook.html">Руководство</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb">
+      <a href="../index.html">Кодекс</a><span class="sep">/</span>Культура и история<span class="sep">/</span>Мор
+    </div>
+
+    <article>
+      <div class="article-header">
+        <span class="article-category">Культура и история</span>
+        <h1>Мор</h1>
+        <span class="badge-updated">Недавно добавлено</span>
+      </div>
+
+      <div class="article-image">
+        <img src="../images/mor.jpg" alt="Мор">
+      </div>
+
+      <div class="article-content">
+        <p>Я бы сказал, что враг сменил стратегию, но в том-то и дело, что раньше у них не было никакой стратегии, кроме как сносить всё на своем пути. За несколько недель нам показалось, что их численность сокращается. Мы уже начали думать, что скоро всех их истребим. Давно мы так не ошибались. Только сегодня мы наткнулись на их основные силы. Словами этого не описать, Аника. Ещё никогда я не видел столько порождений сразу. Их было бессчётное количество, и над всеми возвышалась тварь размером с орзаммарский дворец и дышала огнём. Какой-нибудь их Совершенный — не иначе. Уж очень много почтения ему выказывали.</p>
+        <p>Они уходили. Шли прямо к шахте, ведущей на поверхность. Но раз увидев их, я сразу понял, что, пожрав всё наверху, они непременно вернутся.</p>
+      </div>
+
+      <div class="article-attribution">
+        — Из письма Совершенного Эдукана его жене Анике
+      </div>
+    </article>
+
+    <div class="article-nav">
+      <a href="hasindy.html">&larr; Хасинды</a>
+      <a href="andraste.html">Андрасте &rarr;</a>
+    </div>
+  </main>
+
+  <button class="scroll-top-btn" id="scroll-top-btn" title="Наверх">&#x2191;</button>
+
+  <footer class="site-footer">
+    <div class="container">Записано в эпоху Дракона</div>
+  </footer>
+
+  <script>
+    const btn = document.getElementById('scroll-top-btn');
+    window.addEventListener('scroll', () => btn.classList.toggle('visible', window.scrollY > 500));
+    btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  </script>
+
+</body>
+</html>

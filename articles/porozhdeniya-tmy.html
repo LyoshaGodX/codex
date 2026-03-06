@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Порождения тьмы — Кодекс</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="site-title">&#x2726; Кодекс</a>
+      <nav class="site-nav">
+        <a href="../index.html" class="active">Статьи</a>
+        <a href="../recaps.html">Хроники</a>
+        <a href="../rulebook.html">Руководство</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb">
+      <a href="../index.html">Кодекс</a><span class="sep">/</span>Существа<span class="sep">/</span>Порождения тьмы
+    </div>
+
+    <article>
+      <div class="article-header">
+        <span class="article-category">Существа</span>
+        <h1>Порождения тьмы</h1>
+        <span class="badge-updated">Недавно добавлено</span>
+      </div>
+
+      <div class="article-image">
+        <img src="../images/porozhdeniya-tmy.jpg" alt="Порождения тьмы">
+      </div>
+
+      <div class="article-content">
+        <p>Грех был той повитухой, что помогла появиться на свет порождениям тьмы. Магистры были свержены из Златого города, и их судьба легла бременем на весь наш мир. Ибо они были не одни.</p>
+        <p>Никто не знает, откуда явились порождения тьмы. Темная пародия на людей, они размножились во мраке подземелий, подобно саранче. Во время набегов они часто брали пленных и уволакивали их с собой под землю на Глубинные тропы. Скорее всего они их там поедали. Вероятно, порождениям тьмы, как паукам, надо, чтобы пища была живой. Быть может, они родились из самой тьмы. Как мы знаем, злу не надо стараться, чтобы увековечить себя.</p>
+        <p>Последний Мор случился 400 лет назад в век Башен и ударил по центральной области Тевинтера, распространившись также на юг, в Орлей, и на восток, в Вольную марку. Чума достигла и Ферелдена, но иссыхание земли остановилось прямо у наших границ. Здесь порождения тьмы всегда были скорее предметом легенд. В северных же землях, особенно в Тевинтере и Андерфелсе, порождения тьмы, по слухам, постоянно показываются и в сельской местности, нападая на крестьянские угодья и отдаленные деревни.</p>
+      </div>
+
+      <div class="article-attribution">
+        — Сестра Петрина, учёная Церкви<br>
+        «Ферелден: фольклор и история»
+      </div>
+    </article>
+
+    <div class="article-nav">
+      <a href="vurdolaki.html">&larr; Вурдалаки</a>
+      <a href="garloki.html">Гарлоки &rarr;</a>
+    </div>
+  </main>
+
+  <button class="scroll-top-btn" id="scroll-top-btn" title="Наверх">&#x2191;</button>
+
+  <footer class="site-footer">
+    <div class="container">Записано в эпоху Дракона</div>
+  </footer>
+
+  <script>
+    const btn = document.getElementById('scroll-top-btn');
+    window.addEventListener('scroll', () => btn.classList.toggle('visible', window.scrollY > 500));
+    btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  </script>
+
+</body>
+</html>

@@ -34,7 +34,7 @@
       </div>
 
       <div class="article-image">
-        <img src="../%D1%81%D1%82%D0%B0%D1%82%D1%8C%D0%B8%20%D0%BA%D0%BE%D0%B4%D0%B5%D0%BA%D1%81%D0%B0/%D0%BC%D0%B0%D0%B3%D0%B8%D1%8F%20%D0%B8%20%D1%80%D0%B5%D0%BB%D0%B8%D0%B3%D0%B8%D1%8F/%D1%82%D0%B5%D0%BD%D1%8C.webp" alt="Тень">
+        <img src="../images/ten.webp" alt="Тень">
       </div>
 
       <div class="article-content">
@@ -55,9 +55,17 @@
     </div>
   </main>
 
+  <button class="scroll-top-btn" id="scroll-top-btn" title="Наверх">&#x2191;</button>
+
   <footer class="site-footer">
     <div class="container">Записано в эпоху Дракона</div>
   </footer>
+
+  <script>
+    const btn = document.getElementById('scroll-top-btn');
+    window.addEventListener('scroll', () => btn.classList.toggle('visible', window.scrollY > 500));
+    btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  </script>
 
 </body>
 </html>
