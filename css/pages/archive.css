@@ -1,0 +1,85 @@
+.page-archive .section-nav {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.page-archive .section-nav a {
+  display: inline-block;
+  padding: 10px 22px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  transition: all 0.25s;
+}
+
+.page-archive .section-nav a:hover {
+  background: var(--surface-hover);
+  border-color: var(--border-light);
+  color: var(--accent-hover);
+}
+
+.page-archive .divider.collapsible {
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.25s;
+}
+
+.page-archive .divider.collapsible:hover span:first-child {
+  color: var(--heading);
+}
+
+.page-archive .toggle-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  transform: rotate(90deg);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.page-archive .toggle-icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.page-archive .divider.collapsed .toggle-icon {
+  transform: rotate(0deg);
+}
+
+.page-archive .divider.collapsible:hover .toggle-icon svg path {
+  fill: var(--accent);
+}
+
+.page-archive .section-collapse {
+  overflow: visible;
+  transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.page-archive .section-collapse.collapsed,
+.page-archive .section-collapse.animating {
+  overflow: hidden;
+}
+
+.page-archive .section-collapse .cards-grid {
+  transition: opacity 0.35s ease, transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.page-archive .section-collapse.collapsed .cards-grid {
+  opacity: 0;
+  transform: translateY(-12px);
+}
+
+@media (max-width: 480px) {
+  .page-archive .section-nav a {
+    padding: 8px 16px;
+    font-size: 0.88rem;
+  }
+}

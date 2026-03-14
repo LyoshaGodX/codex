@@ -3,210 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Кодекс</title>
+  <title>Кодекс — на консервации</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/pages/index.css">
 </head>
-<body class="page-index">
-
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="site-title">&#x2726; Кодекс</a>
-      <nav class="site-nav">
-        <a href="index.html" class="active">Заметки</a>
-        <a href="recaps.html">Хроники</a>
-        <a href="rulebook.html">Руководство</a>
-      </nav>
-    </div>
-  </header>
+<body class="page-landing">
 
   <main class="container">
-
     <section class="hero">
       <h1>Кодекс</h1>
-      <p class="subtitle">Собрание знаний о землях Тедаса, записанных учёными, клириками и простыми обывателями</p>
     </section>
-
     <div class="ornament">&#x2E31; &#x2726; &#x2E31;</div>
 
-    <div class="section-nav" id="sections-nav">
-      <a href="#culture">Культура и история</a>
-      <a href="#magic">Магия и религия</a>
-      <a href="#creatures">Существа</a>
-    </div>
+    <section class="farewell-card">
+      <div class="farewell-meta">
+      </div>
+    
+      <div class="chronicle-epigraph">
+        <blockquote class="farewell-quote">
+          <p>«На этом, похоже, история и подошла к концу. По моим источникам, дальше уже ничего нет: ни новых писем, ни рассказов, ни свидетелей, чьему слову я бы поверил.</p>
+          <p>Всё, что я знал, я уже собрал здесь. Больше мне нечего добавить и больше я ничего рассказать не могу»</p>
+        </blockquote>
+      </div>
 
-    <div class="divider collapsible" id="culture" data-target="culture-grid">
-      <span>Культура и история</span>
-      <span class="toggle-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#887b62"><path d="M383.67-239.67v-480.66L624-480 383.67-239.67Z"/></svg></span>
-    </div>
+      <p class="farewell-sign">Варрик Тетрас</p>
 
-    <div class="section-collapse" id="culture-grid">
-    <div class="cards-grid">
-      <a href="articles/gorodskie-elfy.html" class="card">
-        <h3>Городские эльфы</h3>
-        <p>Когда в результате Священного похода на Долы эльфийское царство пало, великое множество эльфов лишилось крова. Верховная Жрица объявила, что все земли должны давать обездоленным пристанище…</p>
-      </a>
-      <a href="articles/kultura-fereldena.html" class="card">
-        <h3>Культура Ферелдена</h3>
-        <p>Народ Ферелдена — сплошная загадка. Грубые, грязные, своенравные и неорганизованные, они каким-то чудом смогли дать миру пророчицу и развалить величайшую в истории империю…</p>
-      </a>
-      <a href="articles/serye-strazhi.html" class="card">
-        <h3>Серые Стражи</h3>
-        <p>Они появились под мерное хлопанье крыльев, подобное стуку могучих военных барабанов. Суровые и бесстрашные, они встали перед армией людей, заслонив их от орды порождений тьмы…</p>
-      </a>
-      <a href="articles/hasindy.html" class="card">
-        <h3>Хасинды</h3>
-        <p>«Дебряки» хасинды живут в Диких землях Коркари с тех пор, как первые войны с аламарри вытеснили их на юг. Во всех племенах широко известна история Флемет…</p>
-      </a>
-      <a href="articles/mor.html" class="card card-updated">
-        <span class="update-dot"></span>
-        <span class="dot-tooltip">Недавно добавлено</span>
-        <h3>Мор</h3>
-        <p>Я бы сказал, что враг сменил стратегию, но в том-то и дело, что раньше у них не было никакой стратегии, кроме как сносить всё на своем пути…</p>
-      </a>
-    </div>
-    </div>
-
-    <div class="divider collapsible" id="magic" data-target="magic-grid">
-      <span>Магия и религия</span>
-      <span class="toggle-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#887b62"><path d="M383.67-239.67v-480.66L624-480 383.67-239.67Z"/></svg></span>
-    </div>
-
-    <div class="section-collapse" id="magic-grid">
-    <div class="cards-grid">
-      <a href="articles/andraste.html" class="card">
-        <h3>Андрасте: Невеста Создателя</h3>
-        <p>Была когда-то на берегу Недремлющего моря крохотная рыбацкая деревушка. Явились воины Тевинтерской империи и увели в рабство жителей деревни…</p>
-      </a>
-      <a href="articles/zapovedi-sozdatelya.html" class="card">
-        <h3>Заповеди Создателя</h3>
-        <p>Таковые истины открыл мне Создатель: как есть лишь один мир, одна жизнь, одна смерть, так есть один лишь бог, и Он наш Создатель…</p>
-      </a>
-      <a href="articles/istoriya-kruga-magov.html" class="card">
-        <h3>История Круга Магов</h3>
-        <p>Ни для кого не секрет, что нет лучшего способа подтолкнуть кого-то к дурному, как запретить ему делать это. Увы, Церковь Священного века плохо понимала прописные истины…</p>
-      </a>
-      <a href="articles/istyazaniya.html" class="card">
-        <h3>Истязания</h3>
-        <p>Я оказался на плато, посреди клубящегося дыма и тумана. Мне не видно было даже собственных ног. Каждый шаг был неверен. Меня защищали лишь воля и магия…</p>
-      </a>
-      <a href="articles/ten.html" class="card">
-        <h3>Тень</h3>
-        <p>Сколько знает себя человеческий род, столько он исследует Тень. Ибо каждый раз, когда мы спим, мы блуждаем по её закоулкам, изредка видя отблеск города посреди неё…</p>
-      </a>
-      <a href="articles/usmiryonnye.html" class="card">
-        <h3>Усмирённые</h3>
-        <p>Над теми, кого чародеи сочтут слишком слабым или ненадёжным, проводят ритуал усмирения. При этом ритуале разрывается связь с Тенью. У усмирённых исчезают не только сны, но и все эмоции…</p>
-      </a>
-      <a href="articles/tserkovnaya-ierarkhiya.html" class="card">
-        <h3>Церковная иерархия</h3>
-        <p>Номинально главой Церкви является Верховная жрица. Рангом ниже стоит Владыка Церкви, управляющий множеством церквей и представляющий высшую религиозную власть…</p>
-      </a>
-      <a href="articles/skverna.html" class="card card-updated">
-        <span class="update-dot"></span>
-        <span class="dot-tooltip">Недавно добавлено</span>
-        <h3>Скверна</h3>
-        <p>Скверна одолевает меня. Что не болит — то отмерло. В голове туман, но учёный во мне не может не описать признаки и ощущения…</p>
-      </a>
-    </div>
-    </div>
-
-    <div class="divider collapsible" id="creatures" data-target="creatures-grid">
-      <span>Существа</span>
-      <span class="toggle-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#887b62"><path d="M383.67-239.67v-480.66L624-480 383.67-239.67Z"/></svg></span>
-    </div>
-
-    <div class="section-collapse" id="creatures-grid">
-    <div class="cards-grid">
-      <a href="articles/vurdolaki.html" class="card">
-        <h3>Вурдалаки</h3>
-        <p>Эти несчастные жертвы при контакте с кровью порождений тьмы не умерли мгновенно. Их охватили лихорадка и безумие. С их тела опали все волосы, а кожа покрылась струпьями…</p>
-      </a>      <a href="articles/porozhdeniya-tmy.html" class="card card-updated">
-        <span class="update-dot"></span>
-        <span class="dot-tooltip">Недавно добавлено</span>
-        <h3>Порождения тьмы</h3>
-        <p>Грех был той повитухой, что помогла появиться на свет порождениям тьмы. Магистры были свержены из Златого города, и их судьба легла бременем на весь наш мир…</p>
-      </a>
-      <a href="articles/garloki.html" class="card card-updated">
-        <span class="update-dot"></span>
-        <span class="dot-tooltip">Недавно добавлено</span>
-        <h3>Порождения тьмы: Гарлоки</h3>
-        <p>Гарлоки выше ростом, чем их собратья генлоки, ― почти с человеком, но обладают мощным сложением и невероятной силой…</p>
-      </a>
-      <a href="articles/genloki.html" class="card card-updated">
-        <span class="update-dot"></span>
-        <span class="dot-tooltip">Недавно добавлено</span>
-        <h3>Порождения тьмы: Генлоки</h3>
-        <p>Удовольствие, которое Кассиус испытывает, расчленяя этих тварей, просто омерзительно. Сегодня на операционном столе был генлок…</p>
-      </a>
-      <a href="articles/krikuny.html" class="card card-updated">
-        <span class="update-dot"></span>
-        <span class="dot-tooltip">Недавно добавлено</span>
-        <h3>Порождения тьмы: Крикуны</h3>
-        <p>Учёные называют этих высоких тощих порождений тьмы шарлоками, но большинству людей они известны как крикуны…</p>
-      </a>    </div>
-    </div>
-
-    <div class="ornament">&#x2E31; &#x2726; &#x2E31;</div>
-
+      <div class="landing-actions">
+        <a href="archive.html" class="button-primary">Открыть архив</a>
+      </div>
+    </section>
   </main>
 
-  <button class="scroll-top-btn" id="scroll-top-btn" title="Наверх">&#x2191;</button>
-
   <footer class="site-footer">
-    <div class="container">
-      Записано в эпоху Дракона
-    </div>
+    <div class="container">Записано в эпоху Дракона</div>
   </footer>
-
-  <script>
-    const btn = document.getElementById('scroll-top-btn');
-    window.addEventListener('scroll', () => {
-      btn.classList.toggle('visible', window.scrollY > 500);
-    });
-    btn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    document.querySelectorAll('.divider.collapsible').forEach(divider => {
-      const wrapper = document.getElementById(divider.dataset.target);
-      if (!wrapper) return;
-
-      // Set initial expanded height
-      wrapper.style.maxHeight = wrapper.scrollHeight + 'px';
-
-      divider.addEventListener('click', () => {
-        const isCollapsed = divider.classList.contains('collapsed');
-
-        if (isCollapsed) {
-          // Expand
-          divider.classList.remove('collapsed');
-          wrapper.classList.remove('collapsed');
-          wrapper.classList.add('animating');
-          wrapper.style.maxHeight = wrapper.scrollHeight + 'px';
-        } else {
-          // Collapse: fix current height first, then set to 0
-          wrapper.classList.add('animating');
-          wrapper.style.maxHeight = wrapper.scrollHeight + 'px';
-          requestAnimationFrame(() => {
-            divider.classList.add('collapsed');
-            wrapper.classList.add('collapsed');
-            wrapper.style.maxHeight = '0px';
-          });
-        }
-      });
-
-      wrapper.addEventListener('transitionend', () => {
-        wrapper.classList.remove('animating');
-        if (!divider.classList.contains('collapsed')) {
-          wrapper.style.maxHeight = 'none';
-        }
-      });
-    });
-  </script>
 
 </body>
 </html>
