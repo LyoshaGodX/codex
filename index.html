@@ -8,38 +8,63 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/pages/index.css">
+  <link rel="stylesheet" href="css/pages/landing.css">
 </head>
 <body class="page-landing">
 
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="site-title">&#x2726; Кодекс</a>
+      <nav class="site-nav">
+        <a href="archive.html">Архив</a>
+        <a href="recaps.html">Хроники</a>
+        <a href="rulebook.html">Руководство</a>
+      </nav>
+    </div>
+  </header>
+
   <main class="container">
+
     <section class="hero">
       <h1>Кодекс</h1>
+      <p class="subtitle">Собрание знаний о землях Тедаса</p>
     </section>
+
     <div class="ornament">&#x2E31; &#x2726; &#x2E31;</div>
 
-    <section class="farewell-card">
-      <div class="farewell-meta">
-      </div>
-    
-      <div class="chronicle-epigraph">
-        <blockquote class="farewell-quote">
-          <p>«На этом, похоже, история и подошла к концу. По моим источникам, дальше уже ничего нет: ни новых писем, ни рассказов, ни свидетелей, чьему слову я бы поверил.</p>
-          <p>Всё, что я знал, я уже собрал здесь. Больше мне нечего добавить и больше я ничего рассказать не могу»</p>
-        </blockquote>
+    <section class="farewell-section">
+      <div class="farewell-epigraph">
+        <p>На этом, похоже, история и подошла к концу. По моим источникам, дальше уже ничего нет: ни новых писем, ни рассказов, ни свидетелей, чьему слову я бы поверил. Всё, что я знал, я уже собрал здесь. Больше мне нечего добавить и больше я ничего рассказать не могу»</p>
       </div>
 
-      <p class="farewell-sign">Варрик Тетрас</p>
-
-      <div class="landing-actions">
-        <a href="archive.html" class="button-primary">Открыть архив</a>
+      <div class="farewell-sign">
+        Варрик Тетрас
       </div>
+
+      <div class="farewell-actions">
+        <a href="archive.html" class="btn-primary">Открыть архив</a>
+        <a href="recaps.html" class="btn-secondary">Хроники</a>
+      </div>
+
     </section>
+
   </main>
+
+  <button class="scroll-top-btn" id="scroll-top-btn" title="Наверх">&#x2191;</button>
 
   <footer class="site-footer">
     <div class="container">Записано в эпоху Дракона</div>
   </footer>
+
+  <script>
+    const btn = document.getElementById('scroll-top-btn');
+    window.addEventListener('scroll', () => {
+      btn.classList.toggle('visible', window.scrollY > 500);
+    });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
 
 </body>
 </html>
